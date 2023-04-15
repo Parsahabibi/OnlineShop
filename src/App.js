@@ -1,10 +1,16 @@
-import { Grid } from '@mui/material';
-import Data from './data/Data';
+import { Grid, ThemeProvider } from '@mui/material';
 import Home from './pages/Home';
+import Theme from './Theme/Theme';
+
+
+
+
 function App() {
   return (
     <Grid>
-      <Home />
+      <ThemeProvider theme={Theme}>
+        <Home />
+      </ThemeProvider>
     </Grid>
   );
 }
