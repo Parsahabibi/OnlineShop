@@ -69,7 +69,7 @@ const Footer = () => {
                             <Grid pb={{ xs: "15px" }} display={"flex"} flexDirection={{ xs: "column", md: "row" }} gap={{ xs: "15px", md: "30px" }} pr={{ xs: "5%" }} >
                                 {
                                     list.map(item =>
-                                        <Grid display={"flex"} gap={"5px"} >
+                                        <Grid display={"flex"} gap={"5px"} key={item.id} >
                                             <img src={item.image} alt={"pic"} style={{ width: "24px", height: "24px" }} />
                                             <Typography fontSize={{ xs: "15px", md: "14px" }}>
                                                 {item.title}
@@ -86,7 +86,7 @@ const Footer = () => {
                                     {
                                         icon.map(
                                             item =>
-                                                <Grid >
+                                                <Grid key={item.id} >
                                                     <img src={item.image} alt='pic' />
                                                 </Grid>
                                         )
@@ -101,7 +101,7 @@ const Footer = () => {
                     {
                         image.map(
                             item =>
-                                <Grid>
+                                <Grid key={item.id}>
                                     <img style={{ width: "130px" }} src={item.image} alt='pic' />
                                 </Grid>
                         )

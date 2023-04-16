@@ -13,7 +13,7 @@ const MainBody = () => {
                     <Main />
                 </Grid>
                 <Grid display={{ xs: "flex" }} alignItems={{ xs: "center", md: "none" }} justifyContent={{ xs: "center", md: "none" }} >
-                    <img src={require('../../assets/image/astera-pic-1.jpg')} alt='pic' style={{ width: "90%", height: "553px", borderRadius: "16px" }} />
+                    <img src={require('../../assets/image/astera-pic-1.jpg')} alt='pic' style={{ width: "90%", height: "568px", borderRadius: "16px" }} />
                 </Grid>
             </Grid>
             <Grid display={{ md: "flex" }} gap={{ lg: "50px" }} pr={{ lg: "100px" }} >

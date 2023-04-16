@@ -19,6 +19,8 @@ import afzone from '../../assets/image/afzone.jpg'
 import html from '../../assets/image/html.jpg'
 import js from '../../assets/image/js.jpg'
 
+import Tooltip from '@mui/material/Tooltip';
+
 
 import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 const Header = () => {
@@ -56,7 +58,7 @@ const Header = () => {
                 {menu.map((text) => (
                     <ListItem key={text.id} disablePadding>
                         <ListItemButton style={{ display: "flex", alignItems: "center", justifyContent: "space-between", alignContent: "center" }}>
-                            <ListItemIcon style={{display:"flex" , alignItems:"center" , gap:"5px"}}>
+                            <ListItemIcon style={{ display: "flex", alignItems: "center", gap: "5px" }}>
                                 <img style={{ width: "20px", height: "20px" }} src={text.image} alt='pic' />
                                 <ListItemText primary={text.title} />
                             </ListItemIcon>
@@ -91,7 +93,7 @@ const Header = () => {
                         menu.map(item =>
                             <Grid display={"flex"} alignItems={"center"} key={item.id} gap={0.5}>
                                 <img style={{ width: "24px", heightL: "24px" }} src={item.image} alt='pic' />
-                                <Typography fontSize={{md:"12px" , lg:"16px"}}>{item.title}</Typography>
+                                <Typography fontSize={{ md: "12px", lg: "16px" }}>{item.title}</Typography>
                                 <KeyboardArrowDownIcon />
                             </Grid>
                         )
@@ -100,23 +102,27 @@ const Header = () => {
             </Grid>
             <Grid display={"flex"} gap={2}>
                 <Grid display={{ xs: "flex", md: "none" }}>
-                    <IconButton color="warning" aria-label="add to shopping cart">
-                        <img src={require('../../assets/image/wallet-check.jpg')} alt='pic' />
-                    </IconButton>
-                    <IconButton color="warning" aria-label="add to shopping cart">
-                        <ShoppingBasketOutlinedIcon />
-                    </IconButton>
+                    <Tooltip title={"پیگیری سفارش"}>
+                        <IconButton color="warning" aria-label="add to shopping cart">
+                            <img src={require('../../assets/image/wallet-check.jpg')} alt='pic' />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title={"سبد خرید"}>
+                        <IconButton color="warning" aria-label="add to shopping cart">
+                            <ShoppingBasketOutlinedIcon />
+                        </IconButton>
+                    </Tooltip>
                 </Grid>
                 {/* button of mobile designs end */}
                 <Grid display={{ xs: 'none', md: "flex" }} gap={"24px"} >
                     <Button style={{ borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center", gap: "5px" }} variant='outlined' color='warning'>
                         <img src={require('../../assets/image/wallet-check.jpg')} alt='pic' />
-                        <Typography fontSize={{md:"12px" , lg:"16px"}}>پیگیری سفارش</Typography>
+                        <Typography fontSize={{ md: "12px", lg: "16px" }}>پیگیری سفارش</Typography>
                     </Button>
                     <Button style={{ borderRadius: "16px", display: "flex", alignItems: "center", justifyContent: "center" }} variant='contained' color='warning'>
                         <Grid container alignItems={"center"} justifyContent={"center"} gap={"5px"} px={"18px"}>
                             <ShoppingBasketOutlinedIcon />
-                            <Typography fontSize={{md:"12px" , lg:"16px"}} fontFamily={"Iran"}>سبد خرید</Typography>
+                            <Typography fontSize={{ md: "12px", lg: "16px" }} fontFamily={"Iran"}>سبد خرید</Typography>
                         </Grid>
                     </Button>
                 </Grid>

@@ -18,8 +18,8 @@ const Main = () => {
                     </Grid>
                     <Grid display={"flex"} flexDirection={"column"} gap={"5px"}>
                         {
-                            list.map(item =>
-                                <Grid>
+                            list.map((item , index) =>
+                                <Grid key={index}>
                                     <Typography fontSize={{xs:"16px" , md:'20px'}}>{item}</Typography>
                                 </Grid>
                             )
